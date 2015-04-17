@@ -1,0 +1,27 @@
+var module = require('./module');
+console.log('first time module.a is :' + module.a);
+module.a = 3;
+console.log('second time module.a is :' + module.a);
+var anothermodule = require('./anothermodule');
+console.log('third time module.a is:' + anothermodule.a);
+var module2 = require('./module');
+console.log('forth time module.a is:' + module2.a);
+var config = require('./config');
+console.log(config.a);
+config.a=3;
+var config2=require('./config');
+console.log(config2.a);
+var third=require('./third');
+third.add();
+third.add=2;
+var forth=require('./third');
+//forth.add();err
+var add=require('./forth');
+var x= new add();
+x.add();
+x.add=3;
+var b=new add();
+b.add();
+var add2=require('./forth');
+var c=new add2();
+c.add();
